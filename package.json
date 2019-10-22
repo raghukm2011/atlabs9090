@@ -8,8 +8,8 @@
     "react-scripts": "3.1.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack/webpack.config.dev.js",
-    "build": "webpack --config webpack/webpack.config.prod.js && webpack --config webpack/webpack.config.server.js",
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js && webpack --config webpack.config.server.js",
     "server": "node server/bin/www",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

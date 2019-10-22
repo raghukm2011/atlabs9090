@@ -5,12 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const clientConfig = {
     target : 'web',
-    entry : {
-        main : path.resolve(__dirname, '../src/index.js'),
-    },
+    entry : './src/index.js',
     output:{
-        path : path.resolve(__dirname, '../dist'),
+        path : path.resolve(__dirname, 'build'),
         filename: "client-bundle.js"
+    },
+    devServer:{
+        contentBase: "./build",
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -103,27 +104,24 @@ const clientConfig = {
         }),
         new HtmlWebpackPlugin({
             title: '', 
-            template: path.resolve(__dirname, '../public/index.html'),
+            template: './public/index.html',
             filename: 'index.html',
            
         }),
         
   ],
 
-    devServer: { 
-        contentBase:'../dist'
-        
-    }
-}
+};
 
 const serverConfig = {
     target : 'node',
-    entry : {
-        server : path.resolve(__dirname, '../server/app.js')
-    },
+    entry : './server/app.js',
     output:{
-        path: path.resolve(__dirname, '../dist'),
+        path : path.resolve(__dirname, 'build'),
         filename: "server-bundle.js"
+    },
+    devServer:{
+        contentBase: "./build",
     },
     externals : [externalsNode()],
 
@@ -184,7 +182,7 @@ const serverConfig = {
     plugins: [
         new HtmlWebpackPlugin({
             title: '', 
-            template: path.resolve(__dirname, '../public/index.html'),
+            template: './public/index.html',
             filename: 'index.html',
            
         })
