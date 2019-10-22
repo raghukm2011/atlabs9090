@@ -111,11 +111,8 @@ const clientConfig = {
   ],
 
     devServer: { 
-        contentBase: path.resolve(__dirname, '../dist'),
-        host: 'localhost', 
-        compress: true,
-        port: 3000,
-        open: true,
+        contentBase:'../dist'
+        
     }
 }
 
