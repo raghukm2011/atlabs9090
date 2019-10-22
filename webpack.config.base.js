@@ -120,9 +120,7 @@ const serverConfig = {
         path : path.resolve(__dirname, 'build'),
         filename: "server-bundle.js"
     },
-    devServer:{
-        contentBase: "./build",
-    },
+   
     externals : [externalsNode()],
 
     module: {
